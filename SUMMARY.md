@@ -1,6 +1,6 @@
 # Table of contents
 
-* [Symverse 소개](README.md)
+* [💚 Symverse 소개](README.md)
   * [EFDN KOR](symverse/efdn-kor.md)
   * [Multichain KOR](symverse/multichain-kor.md)
   * [SymID KOR](symverse/symid-kor.md)
@@ -29,6 +29,6 @@
 
 ## Services
 
-* [Symverse HomePage](https://symverse.com/)
+* [Symverse WebSite](https://symverse.com/)
 * [Main-net Dashboard](https://symstats.symverse.com/)
 * [Main-net Block Explorer](https://scan.symverse.org/)
