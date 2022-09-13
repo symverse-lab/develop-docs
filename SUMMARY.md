@@ -23,9 +23,12 @@
   * [JSON RPC SCT API](developer/rpc-api/json-rpc-sct-api.md)
   * [JSON RPC SCT ErrorCodes](developer/rpc-api/json-rpc-sct-errorcodes.md)
 * [SDK](developer/sdk/README.md)
-  * [sym-web3j (JAVA)](developer/sdk/sym-web3j-java.md)
+  * [sym-web3j (JAVA)](developer/sdk/sym-web3j-java/README.md)
+    * [시작하기](developer/sdk/sym-web3j-java/undefined.md)
+    * [RPC API 사용하기](developer/sdk/sym-web3j-java/rpc-api.md)
 
 ## Services
 
+* [Symverse HomePage](https://symverse.com/)
 * [Main-net Dashboard](https://symstats.symverse.com/)
 * [Main-net Block Explorer](https://scan.symverse.org/)

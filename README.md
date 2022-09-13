@@ -1,71 +1,42 @@
 # Symverse 소개
 
-{% hint style="info" %}
-**Good to know:** providing a brief overview of your product and its core use cases is a great place to start with product docs. Your product might seem obvious to you – you made it! However, to others, even folks who are trying your product after reading your site or getting a sales demo, it can still be unclear. This is your chance to clarify your product and set the right expectations!
-{% endhint %}
+## 심버스는 자기주권형 분산ID를 기반으로 작동하는 1초 대의 블록확정성을 가진 멀티 블록체인 플랫폼 생태계입니다.
 
-Here are a couple of examples of succinct overviews from products with really great docs:
+독자적인 ID체계를 통하여 심버스플랫폼 기반의 독립적인 블록체인플랫폼들은 상호 연동하는 협력적인 생태계로서 블록체인 서비스를 확장시킬 수 있습니다.
 
-> Loom is a video messaging tool that helps you get your message across through instantly shareable videos.
->
-> With Loom, you can record your camera, microphone, and desktop simultaneously. Your video is then instantly available to share through Loom's patented technology.
->
-> — From the [Loom Docs](https://support.loom.com/hc/en-us/articles/360002158057-What-is-Loom-)
 
-> The Mailchimp Marketing API provides programmatic access to Mailchimp data and functionality, allowing developers to build custom features to do things like sync email activity and campaign analytics with their database, manage audiences and campaigns, and more.
->
-> — From the [Mailchimp Marketing API docs](https://mailchimp.com/developer/marketing/docs/fundamentals/)
 
-## Getting Started
+## &#x20;심버스 시작하기&#x20;
 
-**Got 2 minutes?** Check out a video overview of our product:
-
-{% embed url="https://www.loom.com/share/3bfa83acc9fd41b7b98b803ba9197d90" %}
-
-{% hint style="info" %}
-**Good to know:** A succinct video overview is a great way to introduce folks to your product. Embed a Loom, Vimeo or YouTube video and you're good to go! We love this video from the fine folks at [Loom](https://loom.com) as a perfect example of a succinct feature overview.
-{% endhint %}
-
-### Guides: Jump right in
-
-Follow our handy guides to get started on the basics as quickly as possible:
-
-{% content-ref url="developer/undefined/" %}
-[undefined](developer/undefined/)
+{% content-ref url="developer/undefined/undefined/" %}
+[undefined](developer/undefined/undefined/)
 {% endcontent-ref %}
 
-{% content-ref url="broken-reference" %}
-[Broken link](broken-reference)
+{% content-ref url="developer/undefined/undefined-1/" %}
+[undefined-1](developer/undefined/undefined-1/)
 {% endcontent-ref %}
 
-{% content-ref url="developer/undefined/sym.md" %}
-[sym.md](developer/undefined/sym.md)
+## &#x20;RPC API
+
+{% content-ref url="developer/rpc-api/json-rpc-api.md" %}
+[json-rpc-api.md](developer/rpc-api/json-rpc-api.md)
 {% endcontent-ref %}
 
-{% hint style="info" %}
-**Good to know:** your product docs aren't just a reference of all your features! use them to encourage folks to perform certain actions and discover the value in your product.
-{% endhint %}
-
-### Fundamentals: Dive a little deeper
-
-Learn the fundamentals of MyProduct to get a deeper understanding of our main features:
-
-{% content-ref url="developer/sdk/" %}
-[sdk](developer/sdk/)
+{% content-ref url="developer/rpc-api/json-rpc-sct-api.md" %}
+[json-rpc-sct-api.md](developer/rpc-api/json-rpc-sct-api.md)
 {% endcontent-ref %}
 
-{% content-ref url="broken-reference" %}
-[Broken link](broken-reference)
+{% content-ref url="developer/rpc-api/transaction.md" %}
+[transaction.md](developer/rpc-api/transaction.md)
 {% endcontent-ref %}
 
-{% content-ref url="broken-reference" %}
-[Broken link](broken-reference)
+## &#x20;SDK
+
+{% content-ref url="developer/sdk/sym-web3j-java/" %}
+[sym-web3j-java](developer/sdk/sym-web3j-java/)
 {% endcontent-ref %}
 
-{% content-ref url="broken-reference" %}
-[Broken link](broken-reference)
-{% endcontent-ref %}
 
-{% hint style="info" %}
-**Good to know:** Splitting your product into fundamental concepts, objects, or areas can be a great way to let readers deep dive into the concepts that matter most to them. Combine guides with this approach to 'fundamentals' and you're well on your way to great documentation!
-{% endhint %}
+
+
+
