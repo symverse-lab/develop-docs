@@ -1,4 +1,4 @@
-# Symverse 소개
+# 💚 Symverse 소개
 
 ## 심버스는 자기주권형 분산ID를 기반으로 작동하는 1초 대의 블록확정성을 가진 멀티 블록체인 플랫폼 생태계입니다.
 
@@ -6,7 +6,7 @@
 
 
 
-## &#x20;심버스 시작하기&#x20;
+## 심버스 시작하기&#x20;
 
 {% content-ref url="developer/undefined/undefined/" %}
 [undefined](developer/undefined/undefined/)
@@ -16,7 +16,7 @@
 [undefined-1](developer/undefined/undefined-1/)
 {% endcontent-ref %}
 
-## &#x20;RPC API
+## RPC API
 
 {% content-ref url="developer/rpc-api/json-rpc-api.md" %}
 [json-rpc-api.md](developer/rpc-api/json-rpc-api.md)
@@ -30,7 +30,7 @@
 [transaction.md](developer/rpc-api/transaction.md)
 {% endcontent-ref %}
 
-## &#x20;SDK
+## SDK
 
 {% content-ref url="developer/sdk/sym-web3j-java/" %}
 [sym-web3j-java](developer/sdk/sym-web3j-java/)

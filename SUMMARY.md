@@ -26,6 +26,7 @@
   * [sym-web3j (JAVA)](developer/sdk/sym-web3j-java/README.md)
     * [시작하기](developer/sdk/sym-web3j-java/undefined.md)
     * [RPC API 사용하기](developer/sdk/sym-web3j-java/rpc-api.md)
+  * [@sallt/pepper\_wallet (NodeJS)](developer/sdk/sallt-pepper\_wallet-nodejs.md)
 
 ## Services
 
