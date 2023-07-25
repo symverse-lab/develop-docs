@@ -22,6 +22,7 @@
   * [JSON RPC API](developer/rpc-api/json-rpc-api.md)
   * [JSON RPC SCT API](developer/rpc-api/json-rpc-sct-api.md)
   * [JSON RPC SCT ErrorCodes](developer/rpc-api/json-rpc-sct-errorcodes.md)
+* [ID NODE API](developer/id-node-api.md)
 * [SDK](developer/sdk/README.md)
   * [sym-web3j (java)](developer/sdk/sym-web3j-java/README.md)
     * [시작하기](developer/sdk/sym-web3j-java/undefined.md)

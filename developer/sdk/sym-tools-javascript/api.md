@@ -63,7 +63,7 @@ Transaction 메시지를 구성합니다
   * hexValue: The hex value of the transaction.
   * hexData: The hex data of the transaction.
   * hexType: The hex type of the transaction.
-  * warrantNode: The warrant node of the transaction.
+  * workNode: The work node of the transaction.
   * hexExtraData: The hex extra data of the transaction.
 * **Returns**: The composed send transaction.
 

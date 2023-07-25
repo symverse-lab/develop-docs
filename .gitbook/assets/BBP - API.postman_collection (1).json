@@ -1,0 +1,54 @@
+{
+	"info": {
+		"_postman_id": "1dcc51ba-03d2-48f1-961b-6bde94b62f4d",
+		"name": "BBP - API",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "22977797",
+		"_collection_link": "https://warped-moon-495019.postman.co/workspace/BaaS%ED%8C%80~a1e5b696-41a2-4d67-b456-90ad651f7fa3/collection/22977797-1dcc51ba-03d2-48f1-961b-6bde94b62f4d?action=share&creator=22977797&source=collection_link"
+	},
+	"item": [
+		{
+			"name": "계정 생성",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "{{testnet-url}}/caii/d1/15f43eb577114bbfb23a2f8ee31640b6/account/new",
+					"host": [
+						"{{testnet-url}}"
+					],
+					"path": [
+						"caii",
+						"d1",
+						"15f43eb577114bbfb23a2f8ee31640b6",
+						"account",
+						"new"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "계정 생성 (Pubkey 기반)",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "{{testnet-url}}/caii/d1/15f43eb577114bbfb23a2f8ee31640b6/account/new/",
+					"host": [
+						"{{testnet-url}}"
+					],
+					"path": [
+						"caii",
+						"d1",
+						"15f43eb577114bbfb23a2f8ee31640b6",
+						"account",
+						"new",
+						""
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
