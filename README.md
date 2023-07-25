@@ -36,7 +36,14 @@
 [sym-web3j-java](developer/sdk/sym-web3j-java/)
 {% endcontent-ref %}
 
+{% content-ref url="developer/sdk/sym-web3js-javascript/" %}
+[sym-web3js-javascript](developer/sdk/sym-web3js-javascript/)
+{% endcontent-ref %}
 
+{% content-ref url="developer/sdk/sym-tools-javascript/" %}
+[sym-tools-javascript](developer/sdk/sym-tools-javascript/)
+{% endcontent-ref %}
 
-
-
+{% content-ref url="developer/sdk/sallt-pepper_wallet-nodejs.md" %}
+[sallt-pepper\_wallet-nodejs.md](developer/sdk/sallt-pepper\_wallet-nodejs.md)
+{% endcontent-ref %}
