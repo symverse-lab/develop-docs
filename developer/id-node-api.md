@@ -1,5 +1,7 @@
 ---
-description: 해당 문서는 Dapp 연동 시 SymID를 발급 받기 위해 제공되는 API 입니다.
+description: >-
+  ID NODE API는 Dapp 연동 시 SymID를 발급 혹은 Keystore 생성 하기 위해 제공되는 Dapp Partner API
+  입니다.
 ---
 
 # ID NODE API
