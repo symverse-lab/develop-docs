@@ -311,6 +311,95 @@ hasher.combineMessage("0xf84a8a00032dd1fa260e2a000281bd85174876e80083011e688aaca
 }
 ```
 
+## Utils 함수
+
+### 1. **utils.**toValueString(hexValue, srcRadix, dstRadix)
+
+This function converts the provided hex value from the source radix to the destination radix.
+
+* **Parameters**:
+  * hexValue: The hex value to be converted.
+  * srcRadix: The source radix.
+  * dstRadix: The destination radix.
+* **Returns**: The converted value as a string.
+
+```javascript
+// 예제 코드
+utils.toValueString("0x14", 16, 10)
+utils.toValueString("21", 10, 16)
+
+// 결과
+"20"
+"0x15"
+```
+
+### 2. **utils.**stringToUtf8(str)
+
+This function converts the provided string to UTF-8 encoding.
+
+* **Parameters**:
+  * str: The string to be converted.
+* **Returns**: The UTF-8 encoded string.
+
+```javascript
+// 예제 코드
+utils.stringToUtf8("문자열")
+
+//결과 
+"0xebacb8ec9e90ec97b4"
+```
+
+### 3. **utils.**utf8ToString(hexStr)
+
+This function converts the provided UTF-8 encoded hex string to a regular string.
+
+* **Parameters**:
+  * hexStr: The UTF-8 encoded hex string to be converted.
+* **Returns**: The converted string.
+
+```javascript
+// 예제 코드
+utils.utf8ToString("0xebacb8ec9e90ec97b4")
+
+//결과 
+"문자열"
+```
+
+### 4. **utils.**toRlp(hexParams)
+
+This function converts the provided hex parameters to RLP encoding.
+
+* **Parameters**:
+  * hexParams: The hex parameters to be converted.
+* **Returns**: The RLP encoded parameters.
+
+```javascript
+// 예제 코드
+utils.toRlp(param...)
+
+// 결과 
+"0xe18a00032dd1fa260e2a00028aaca4414a37d7a6dc43e58a0002537dc9a64d350002"
+```
+
+### 5. pubkeyHash(hexPublicKey)
+
+This function returns the hash of the provided hex public key.
+
+* **Parameters**:
+  * hexPublicKey: The hex public key.
+* **Returns**: The hash of the public key.
+
+```javascript
+// 예제 코드
+utils.pubkeyHash("0x12345678901234567890123456789012345678901234567890123456789012341234567890123456789012345678901234567890123456789012345678901234")
+
+// 결과
+"0x0249e4711e75daab8781ad36e334d7b16610879a"
+```
+
+\
+
+
 ## 참고 문서
 
 * **Github:** [https://github.com/symverse-lab/sym-tools](https://github.com/symverse-lab/sym-tools)
