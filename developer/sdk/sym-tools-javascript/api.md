@@ -4,9 +4,9 @@ description: SDK를 사용하여 트랜잭션 생성, 해시, 전송등 관련�
 
 # API 사용하기
 
-## 1. Transaction 함수
+## Transaction 함수
 
-### **transaction.recover(message,v, r, s)**
+### **1. transaction.recover(message,v, r, s)**
 
 트랜잭션의 서명된 값을 기반으로 PublicKey를 복구합니다.
 
@@ -30,7 +30,7 @@ transaction.recover("0xf84a8a00032dd1fa260e2a000281bd85174876e80083011e688aaca44
 }
 ```
 
-### **transaction.recoverFromRawTx(rawTx)**
+### **2. transaction.recoverFromRawTx(rawTx)**
 
 RawTransaction 기반으로 PublicKey를 복구합니다.
 
@@ -50,7 +50,7 @@ transaction.recoverFromRawTx("0xf88d8a00032dd1fa260e2a000281bd85174876e80083011e
 }
 ```
 
-### transaction.composeSendTransaction(...parameters)
+### 3. transaction.composeSendTransaction(...parameters)
 
 Transaction 메시지를 구성합니다
 
@@ -101,7 +101,7 @@ Transaction 메시지를 구성합니다
 }
 </code></pre>
 
-### transaction.**composeSct(**sctType, methodName, params)
+### 4. transaction.**composeSct(**sctType, methodName, params)
 
 SCT 트랜잭션 정보를 구성합니다
 
@@ -132,7 +132,7 @@ SCT 트랜잭션 정보를 구성합니다
 }
 </code></pre>
 
-### transaction.**composeSct20Transfer**(recipient, amount)
+### 5. transaction.**composeSct20Transfer**(recipient, amount)
 
 SCT20 전송 트랜잭션을 구성합니다.
 
@@ -161,7 +161,7 @@ SCT20 전송 트랜잭션을 구성합니다.
 
 </code></pre>
 
-### transaction.**composeSct21Transfer**(recipient, amount)
+### 6. transaction.**composeSct21Transfer**(recipient, amount)
 
 SCT21 전송 트랜잭션을 구성합니다.
 
@@ -189,7 +189,7 @@ SCT21 전송 트랜잭션을 구성합니다.
 }
 </code></pre>
 
-### transaction.**composeSct22Transfer**(recipient, amount)
+### 7. transaction.**composeSct22Transfer**(recipient, amount)
 
 SCT22 전송 트랜잭션을 구성합니다.
 
@@ -217,7 +217,7 @@ SCT22 전송 트랜잭션을 구성합니다.
 }
 </code></pre>
 
-### **transaction.parseRawTx(**rawTx**)**
+### **8. transaction.parseRawTx(**rawTx**)**
 
 RawTransaction 를 트랜잭션 메시지로 추출합니다.
 
@@ -245,7 +245,7 @@ RawTransaction 를 트랜잭션 메시지로 추출합니다.
 }
 </code></pre>
 
-### **transaction.parseSct**(hexSctMethod)
+### **9. transaction.parseSct**(hexSctMethod)
 
 SCT Raw Paramter 값을 SCT 메시지로 추출합니다.
 
@@ -267,9 +267,9 @@ SCT Raw Paramter 값을 SCT 메시지로 추출합니다.
 }
 </code></pre>
 
-### 2. HASHER 함수
+## Hasher 함수
 
-### **hasher.hashMessage(**hexMessage**)**
+### **1. hasher.hashMessage(**hexMessage**)**
 
 &#x20;메시지를 hash 함수를 통해 추출합니다.
 
@@ -287,7 +287,7 @@ SCT Raw Paramter 값을 SCT 메시지로 추출합니다.
 }
 </code></pre>
 
-### **hasher.combineMessage(**message, v, r, s**)**
+### **2. hasher.combineMessage(**message, v, r, s**)**
 
 &#x20;메시지와 v,r,s 기반으로 서명값과 RawTransaction를 추출합니다.
 
