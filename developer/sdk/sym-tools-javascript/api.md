@@ -116,6 +116,20 @@ SCT 트랜잭션 정보를 구성합니다
     {"recipient": "0x00032dd1fa260e2a0002", "amount": "0x174876e800"}
 )
 
+// 결과
+{
+    "type": 21,
+    "method": "TRANSFER",
+    "params": [
+        "0x15",
+        "0x01",
+        "0x00032dd1fa260e2a0002",
+        "0x174876e800"
+    ],
+    "gasPrice": "0xbf68",
+    "gasLimit": "0x011670",
+    "serialize": "0xd41501d18a00032dd1fa260e2a000285174876e800"
+}
 </code></pre>
 
 ### transaction.**composeSct20Transfer**(recipient, amount)
@@ -128,7 +142,22 @@ SCT20 전송 트랜잭션을 구성합니다.
 * **Returns**: The composed SCT20 transfer.
 
 <pre class="language-javascript"><code class="lang-javascript"><strong>// 예제 코드
-</strong>transaction.composeSct20Transfer("0x00032dd1fa260e2a0002", "0x174876e800")
+</strong><strong>transaction.composeSct20Transfer("0x00032dd1fa260e2a0002", "0x174876e800")
+</strong>
+// 결과
+{
+    "type": 20,
+    "method": "TRANSFER",
+    "params": [
+        "0x14",
+        "0x01",
+        "0x00032dd1fa260e2a0002",
+        "0x174876e800"
+    ],
+    "gasPrice": "0xbf68",
+    "gasLimit": "0x011288",
+    "serialize": "0xd41401d18a00032dd1fa260e2a000285174876e800"
+}
 
 </code></pre>
 
@@ -142,8 +171,22 @@ SCT21 전송 트랜잭션을 구성합니다.
 * **Returns**: The composed SCT21 transfer.
 
 <pre class="language-javascript"><code class="lang-javascript"><strong>// 예제 코드
-</strong>transaction.composeSct20Transfer("0x00032dd1fa260e2a0002", "0x174876e800")
+</strong>transaction.composeSct21Transfer("0x00032dd1fa260e2a0002", "0x174876e800")
 
+// 결과
+{
+    "type": 21,
+    "method": "TRANSFER",
+    "params": [
+        "0x15",
+        "0x01",
+        "0x00032dd1fa260e2a0002",
+        "0x174876e800"
+    ],
+    "gasPrice": "0xbf68",
+    "gasLimit": "0x011670",
+    "serialize": "0xd41501d18a00032dd1fa260e2a000285174876e800"
+}
 </code></pre>
 
 ### transaction.**composeSct22Transfer**(recipient, amount)
@@ -156,8 +199,22 @@ SCT22 전송 트랜잭션을 구성합니다.
 * **Returns**: The composed SCT22 transfer.
 
 <pre class="language-javascript"><code class="lang-javascript"><strong>// 예제 코드
-</strong>transaction.composeSct20Transfer("0x00032dd1fa260e2a0002", "0x174876e800")
+</strong>transaction.composeSct22Transfer("0x00032dd1fa260e2a0002", "0x174876e800")
 
+// 결과
+{
+    "type": 22,
+    "method": "TRANSFER",
+    "params": [
+        "0x16",
+        "0x01",
+        "0x00032dd1fa260e2a0002",
+        "0x174876e800"
+    ],
+    "gasPrice": "0xbf68",
+    "gasLimit": "0x011288",
+    "serialize": "0xd41601d18a00032dd1fa260e2a000285174876e800"
+}
 </code></pre>
 
 ### **transaction.parseRawTx(**rawTx**)**
@@ -169,8 +226,23 @@ RawTransaction 를 트랜잭션 메시지로 추출합니다.
 * **Returns**: The parsed transaction.
 
 <pre class="language-javascript"><code class="lang-javascript"><strong>// 예제 코드
-</strong>transaction.composeSct20Transfer("0x00032dd1fa260e2a0002", "0x174876e800")
+</strong>transaction.parseRawTx("0xf84a8a00032dd1fa260e2a000281bd85174876e80083011e688aaca4414a37d7a6dc43e58098d71501d48a000232c721024cdd0002880de0b6b3a764000001cb8a0002537dc9a64d35000280")
 
+// 결과
+{
+    "from": "0x00032dd1fa260e2a0002",
+    "nonce": "0xbd",
+    "gasPrice": "0x174876e800",
+    "gasLimit": "0x11e68",
+    "to": "0xaca4414a37d7a6dc43e5",
+    "value": "0x0",
+    "data": "0xd71501d48a000232c721024cdd0002880de0b6b3a7640000",
+    "type": "0x1",
+    "warrantNodes": [
+        "0x0002537dc9a64d350002"
+    ],
+    "extra": "0x"
+}
 </code></pre>
 
 ### **transaction.parseSct**(hexSctMethod)
@@ -182,8 +254,17 @@ SCT Raw Paramter 값을 SCT 메시지로 추출합니다.
 * **Returns**: The parsed SCT method.
 
 <pre class="language-javascript"><code class="lang-javascript"><strong>// 예제 코드
-</strong>transaction.composeSct20Transfer("0x00032dd1fa260e2a0002", "0x174876e800")
+</strong>transaction.parseSct("0xd71501d48a000232c721024cdd0002880de0b6b3a7640000")
 
+// 결과
+{
+    "type": 21,
+    "method": "TRANSFER",
+    "params": [
+        "0x000232c721024cdd0002",
+        "0x0de0b6b3a7640000"
+    ]
+}
 </code></pre>
 
 ### 2. HASHER 함수
