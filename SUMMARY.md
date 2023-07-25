@@ -23,12 +23,14 @@
   * [JSON RPC SCT API](developer/rpc-api/json-rpc-sct-api.md)
   * [JSON RPC SCT ErrorCodes](developer/rpc-api/json-rpc-sct-errorcodes.md)
 * [SDK](developer/sdk/README.md)
-  * [sym-web3j (JAVA)](developer/sdk/sym-web3j-java/README.md)
+  * [sym-web3j (java)](developer/sdk/sym-web3j-java/README.md)
     * [시작하기](developer/sdk/sym-web3j-java/undefined.md)
     * [RPC API 사용하기](developer/sdk/sym-web3j-java/rpc-api.md)
-  * [sym-web3js (NodeJS)](developer/sdk/sym-web3js-nodejs/README.md)
-    * [시작하기](developer/sdk/sym-web3js-nodejs/undefined.md)
-    * [RPC API 사용하기](developer/sdk/sym-web3js-nodejs/rpc-api.md)
+  * [sym-web3js (javascript)](developer/sdk/sym-web3js-javascript/README.md)
+    * [시작하기](developer/sdk/sym-web3js-javascript/undefined.md)
+    * [RPC API 사용하기](developer/sdk/sym-web3js-javascript/rpc-api.md)
+  * [sym-tools (javascript)](developer/sdk/sym-tools-javascript/README.md)
+    * [API 사용하기](developer/sdk/sym-tools-javascript/api.md)
   * [@sallt/pepper\_wallet (NodeJS)](developer/sdk/sallt-pepper\_wallet-nodejs.md)
 
 ## Services
