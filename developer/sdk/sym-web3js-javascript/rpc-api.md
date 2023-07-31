@@ -17,9 +17,9 @@ description: "아래는 Symverse Blockchain 의 RPC API 를 \b호출하는 방�
 
 ```javascript
 const symjs = SymJs();
-const symverseNode = symjs.utils.fromNetwork('MAINNET'); // 테스트넷은 "TESTNET"을 넣습니다
+const gsym = symjs.utils.fromNetwork('MAINNET'); // 테스트넷은 "TESTNET"을 넣습니다
 
-symverseNode.network.connect(gsym.url).then(connectedMessage => {
+symjs.network.connect(gsym.url).then(connectedMessage => {
     console.log(connectedMessage, 'connect success...')
 }).catch(e => {
     // connected fail...
@@ -32,7 +32,7 @@ symverseNode.network.connect(gsym.url).then(connectedMessage => {
 ```javascript
 const symjs = SymJs();
 
-symverseNode.network.connect('http://localhost:8584').then(connectedMessage => {
+symjs.network.connect('http://localhost:8584').then(connectedMessage => {
     console.log(connectedMessage, 'connect success...')
 }).catch(e => {
     // connected fail...
