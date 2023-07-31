@@ -6,7 +6,7 @@ description: SDK를 사용하여 트랜잭션 생성, 해시, 전송등 관련�
 
 ## Transaction 함수
 
-### **1. transaction.recover(message,v, r, s)**
+### **1. transaction.recover(message,v, r, s**, \[`chainId?`, `forkId?`] **)**
 
 트랜잭션의 서명된 값을 기반으로 PublicKey를 복구합니다.
 
@@ -15,6 +15,9 @@ description: SDK를 사용하여 트랜잭션 생성, 해시, 전송등 관련�
   * hexV: The hex V value.
   * hexR: The hex R value.
   * hexS: The hex S value.
+  * options\[Array]: chainId와 forkId를 추가합니다.
+    * chainId: 체인 ID hex string
+    * forkId: 포크 ID hex string
 * **Returns**: The recovered address.
 
 ```javascript
@@ -30,12 +33,15 @@ transaction.recover("0xf84a8a00032dd1fa260e2a000281bd85174876e80083011e688aaca44
 }
 ```
 
-### **2. transaction.recoverFromRawTx(rawTx)**
+### **2. transaction.recoverFromRawTx(rawTx**, \[`chainId?`, `forkId?`] **)**
 
 RawTransaction 기반으로 PublicKey를 복구합니다.
 
 * **Parameters**:
   * hexRawTx: The hex raw transaction.
+  * options\[Array]: chainId와 forkId를 추가합니다.
+    * chainId: 체인 ID hex string
+    * forkId: 포크 ID hex string
 * **Returns**: The recovered address.
 
 ```javascript
@@ -50,7 +56,7 @@ transaction.recoverFromRawTx("0xf88d8a00032dd1fa260e2a000281bd85174876e80083011e
 }
 ```
 
-### 3. transaction.composeSendTransaction(...parameters, \[`hexChainId?`, `hexForkId?`] )
+### 3. transaction.composeSendTransaction(...parameters, \[`chainId?`, `forkId?`] )
 
 Transaction 메시지를 구성합니다
 
@@ -65,9 +71,9 @@ Transaction 메시지를 구성합니다
   * hexType: The hex type of the transaction.
   * workNode: The work node of the transaction.
   * hexExtraData: The hex extra data of the transaction.
-  * options\[Array]: chainId와 forkId를 배열 상태로 추가합니다.
-    * chainId: 체인 ID
-    * ForkId: 포크 ID
+  * options\[Array]: chainId와 forkId를 추가합니다.
+    * chainId: 체인 ID hex string
+    * forkId: 포크 ID hex string
 * **Returns**: The composed send transaction.
 
 <pre class="language-javascript"><code class="lang-javascript"><strong>// 예제 코드
@@ -272,12 +278,15 @@ SCT Raw Paramter 값을 SCT 메시지로 추출합니다.
 
 ## Hasher 함수
 
-### **1. hasher.hashMessage(**hexMessage**)**
+### **1. hasher.hashMessage(**hexMessage, \[`chainId?`, `forkId?`] **)**
 
 &#x20;메시지를 hash 함수를 통해 추출합니다.
 
 * **Parameters**:
-  * hexMessage: The hex message to be hashed.
+  * hexMessage: hex string 기반의 메시지
+  * options\[Array]: chainId와 forkId를 추가합니다.
+    * chainId: 체인 ID hex string
+    * forkId: 포크 ID hex string
 * **Returns**: The hashed message.
 
 <pre class="language-javascript"><code class="lang-javascript"><strong>// 예제 코드
