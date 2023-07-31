@@ -50,7 +50,7 @@ transaction.recoverFromRawTx("0xf88d8a00032dd1fa260e2a000281bd85174876e80083011e
 }
 ```
 
-### 3. transaction.composeSendTransaction(...parameters)
+### 3. transaction.composeSendTransaction(...parameters, \[`hexChainId?`, `hexForkId?`] )
 
 Transaction 메시지를 구성합니다
 
@@ -65,6 +65,9 @@ Transaction 메시지를 구성합니다
   * hexType: The hex type of the transaction.
   * workNode: The work node of the transaction.
   * hexExtraData: The hex extra data of the transaction.
+  * options\[Array]: chainId와 forkId를 배열 상태로 추가합니다.
+    * chainId: 체인 ID
+    * ForkId: 포크 ID
 * **Returns**: The composed send transaction.
 
 <pre class="language-javascript"><code class="lang-javascript"><strong>// 예제 코드
