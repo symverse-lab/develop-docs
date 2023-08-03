@@ -6,18 +6,17 @@ description: SDK를 사용하여 트랜잭션 생성, 해시, 전송등 관련�
 
 ## Transaction 함수
 
-### **1. transaction.recover(message,v, r, s**, \[`chainId?`, `forkId?`] **)**
+### **1. transaction.recover(message,V, R, S**, \[`chainId?`] **)**
 
 트랜잭션의 서명된 값을 기반으로 PublicKey를 복구합니다.
 
 * **Parameters:**
-  * hexMessage: The hex message.
-  * hexV: The hex V value.
-  * hexR: The hex R value.
-  * hexS: The hex S value.
-  * options\[Array]: chainId와 forkId를 추가합니다.
+  * message: RLP 인코딩 트랜잭션의  값
+  * V: ECDSA의 서명 v값
+  * R: ECDSA의 서명 r값
+  * S: ECDSA의 서명 s값
+  * options\[Array]: chainId를 추가합니다.
     * chainId: 체인 ID hex string
-    * forkId: 포크 ID hex string
 * **Returns**: The recovered address.
 
 ```javascript
@@ -33,15 +32,14 @@ transaction.recover("0xf84a8a00032dd1fa260e2a000281bd85174876e80083011e688aaca44
 }
 ```
 
-### **2. transaction.recoverFromRawTx(rawTx**, \[`chainId?`, `forkId?`] **)**
+### **2. transaction.recoverFromRawTx(rawTx**, \[`chainId?`] **)**
 
 RawTransaction 기반으로 PublicKey를 복구합니다.
 
 * **Parameters**:
-  * hexRawTx: The hex raw transaction.
+  * hexRawTx: 서명값이 포함된 RLP 인코딩 트랜잭션 값
   * options\[Array]: chainId와 forkId를 추가합니다.
     * chainId: 체인 ID hex string
-    * forkId: 포크 ID hex string
 * **Returns**: The recovered address.
 
 ```javascript
@@ -56,24 +54,23 @@ transaction.recoverFromRawTx("0xf88d8a00032dd1fa260e2a000281bd85174876e80083011e
 }
 ```
 
-### 3. transaction.composeSendTransaction(...parameters, \[`chainId?`, `forkId?`] )
+### 3. transaction.composeSendTransaction(...parameters, \[`chainId?`] )
 
 Transaction 메시지를 구성합니다
 
 * **Parameters**:
-  * from: The sender address.
-  * hexNonce: The hex nonce value.
-  * hexGasPrice: The hex gas price value.
-  * hexGasLimit: The hex gas limit value.
-  * to: The receiver address.
-  * hexValue: The hex value of the transaction.
-  * hexData: The hex data of the transaction.
-  * hexType: The hex type of the transaction.
-  * workNode: The work node of the transaction.
-  * hexExtraData: The hex extra data of the transaction.
+  * from:  보내는 symId
+  * nonce: 전송하는 symid의 트랜잭션 noce
+  * gasPrice: 사용할 가스
+  * gasLimit: 사용할 최대 가스
+  * to: 받는 symid
+  * value:  SYM balance
+  * data: 트랜잭션에 담길 메시지 혹은 컨트렉트 인코딩 값&#x20;
+  * type:  0: general(default), 1: sct, 2: deposit)
+  * workNode\[Array]: 배열, 트랜잭션을 전달하는 작업 노드 목록(개수 고정 == 1)
+  * extraData: \[]byte
   * options\[Array]: chainId와 forkId를 추가합니다.
     * chainId: 체인 ID hex string
-    * forkId: 포크 ID hex string
 * **Returns**: The composed send transaction.
 
 <pre class="language-javascript"><code class="lang-javascript"><strong>// 예제 코드
@@ -115,9 +112,9 @@ Transaction 메시지를 구성합니다
 SCT 트랜잭션 정보를 구성합니다
 
 * **Parameters**:
-  * sctType: The type of the smart contract transaction.
-  * methodName: The name of the method.
-  * params: The parameters of the method.
+  * sctType: SCT 타입을 의미 (20, 30 등) - **문서 참고:** [sct-kor.md](../../../symverse/sct-kor.md "mention")
+  * methodName: SCT 실행 함수를 의미&#x20;
+  * params: SCT 실행 함수에 들어갈 파라미터를 의미
 * **Returns**: The composed smart contract transaction.
 
 <pre class="language-javascript"><code class="lang-javascript"><strong>// 예제 코드
@@ -146,8 +143,8 @@ SCT 트랜잭션 정보를 구성합니다
 SCT20 전송 트랜잭션을 구성합니다.
 
 * **Parameters**:
-  * recipient: The recipient of the transfer.
-  * amount: The amount of the transfer.
+  * recipient: 토큰을 전달 받을 SymID
+  * amount: 토큰 개수
 * **Returns**: The composed SCT20 transfer.
 
 <pre class="language-javascript"><code class="lang-javascript"><strong>// 예제 코드
@@ -175,8 +172,8 @@ SCT20 전송 트랜잭션을 구성합니다.
 SCT21 전송 트랜잭션을 구성합니다.
 
 * **Parameters**:
-  * recipient: The recipient of the transfer.
-  * amount: The amount of the transfer.
+  * recipient: 토큰을 전달 받을 SymID
+  * amount: 토큰 개수
 * **Returns**: The composed SCT21 transfer.
 
 <pre class="language-javascript"><code class="lang-javascript"><strong>// 예제 코드
@@ -203,8 +200,8 @@ SCT21 전송 트랜잭션을 구성합니다.
 SCT22 전송 트랜잭션을 구성합니다.
 
 * **Parameters**:
-  * recipient: The recipient of the transfer.
-  * amount: The amount of the transfer.
+  * recipient: 토큰을 전달 받을 SymID
+  * amount: 토큰 개수
 * **Returns**: The composed SCT22 transfer.
 
 <pre class="language-javascript"><code class="lang-javascript"><strong>// 예제 코드
@@ -228,10 +225,10 @@ SCT22 전송 트랜잭션을 구성합니다.
 
 ### **8. transaction.parseRawTx(**rawTx**)**
 
-RawTransaction 를 트랜잭션 메시지로 추출합니다.
+RLP 인코딩된 RawTransaction 를 트랜잭션 메시지로 추출합니다.
 
 * **Parameters**:
-  * rawTx: The raw transaction to be parsed.
+  * rawTx: RLP 인코딩 트랜잭션
 * **Returns**: The parsed transaction.
 
 <pre class="language-javascript"><code class="lang-javascript"><strong>// 예제 코드
@@ -254,12 +251,12 @@ RawTransaction 를 트랜잭션 메시지로 추출합니다.
 }
 </code></pre>
 
-### **9. transaction.parseSct**(hexSctMethod)
+### **9. transaction.parseSct**(RlpEncodeSct)
 
-SCT Raw Paramter 값을 SCT 메시지로 추출합니다.
+SCT RLP 인코딩 된 값을 디코딩합니다.
 
 * **Parameters**:
-  * hexSctMethod: The hex SCT method to be parsed.
+  * hexSctMethod: RLP 인코딩 된 SCT Type, method, params 값
 * **Returns**: The parsed SCT method.
 
 <pre class="language-javascript"><code class="lang-javascript"><strong>// 예제 코드
@@ -278,15 +275,14 @@ SCT Raw Paramter 값을 SCT 메시지로 추출합니다.
 
 ## Hasher 함수
 
-### **1. hasher.hashMessage(**hexMessage, \[`chainId?`, `forkId?`] **)**
+### **1. hasher.hashMessage(**hexMessage, \[`chainId?`] **)**
 
-&#x20;메시지를 hash 함수를 통해 추출합니다.
+&#x20;메시지를 Hash 처리
 
 * **Parameters**:
-  * hexMessage: hex string 기반의 메시지
+  * hexMessage: 메시지를 SHA3로 해시를 실행합니다.
   * options\[Array]: chainId와 forkId를 추가합니다.
     * chainId: 체인 ID hex string
-    * forkId: 포크 ID hex string
 * **Returns**: The hashed message.
 
 <pre class="language-javascript"><code class="lang-javascript"><strong>// 예제 코드
@@ -301,10 +297,10 @@ SCT Raw Paramter 값을 SCT 메시지로 추출합니다.
 
 ### **2. hasher.combineMessage(**message, v, r, s**)**
 
-&#x20;메시지와 v,r,s 기반으로 서명값과 RawTransaction를 추출합니다.
+서명값이 없는 RLP 인코딩 트랜잭션 메시지와 ecdsa 서명 v ,r, s 기반으로  RLP 인코딩 값을 추출합니다.
 
 * **Parameters**:
-  * hexMessage: The hex message.
+  * hexMessage: 서명값이 없는 RLP 인코딩 트랜잭션 메시지
   * hexV: The hex V value.
   * hexR: The hex R value.
   * hexS: The hex S value.
@@ -325,14 +321,14 @@ hasher.combineMessage("0xf84a8a00032dd1fa260e2a000281bd85174876e80083011e688aaca
 
 ## Utils 함수
 
-### 1. **utils.**toValueString(hexValue, srcRadix, dstRadix)
+### 1. **utils.**toValueString(value, srcRadix, dstRadix)
 
-This function converts the provided hex value from the source radix to the destination radix.
+값을 특정 진수에 맞게 변환합니다.
 
 * **Parameters**:
-  * hexValue: The hex value to be converted.
-  * srcRadix: The source radix.
-  * dstRadix: The destination radix.
+  * hexValue: 특진 진수로 변환할 값
+  * srcRadix: 기존 진수
+  * dstRadix: 변환할 진수
 * **Returns**: The converted value as a string.
 
 ```javascript
@@ -347,10 +343,10 @@ utils.toValueString("21", 10, 16)
 
 ### 2. **utils.**stringToUtf8(str)
 
-This function converts the provided string to UTF-8 encoding.
+문자열을 Hex UTF-8 String으로 변환합니다.&#x20;
 
 * **Parameters**:
-  * str: The string to be converted.
+  * str: 변환할 문자열&#x20;
 * **Returns**: The UTF-8 encoded string.
 
 ```javascript
@@ -363,10 +359,10 @@ utils.stringToUtf8("문자열")
 
 ### 3. **utils.**utf8ToString(hexStr)
 
-This function converts the provided UTF-8 encoded hex string to a regular string.
+Hex UTF8 String 에서 문자열로 변환합니다.
 
 * **Parameters**:
-  * hexStr: The UTF-8 encoded hex string to be converted.
+  * hexStr: 변환할 Hex UTF-8 String
 * **Returns**: The converted string.
 
 ```javascript
@@ -377,12 +373,12 @@ utils.utf8ToString("0xebacb8ec9e90ec97b4")
 "문자열"
 ```
 
-### 4. **utils.**toRlp(hexParams)
+### 4. **utils.**toRlp(params)
 
-This function converts the provided hex parameters to RLP encoding.
+특정 값을 RLP 인코딩합니다.
 
 * **Parameters**:
-  * hexParams: The hex parameters to be converted.
+  * hexParams: RLP 인코딩할 값
 * **Returns**: The RLP encoded parameters.
 
 ```javascript
@@ -395,10 +391,10 @@ utils.toRlp(param...)
 
 ### 5. pubkeyHash(hexPublicKey)
 
-This function returns the hash of the provided hex public key.
+PublicKey를 SHA3로 해시를 실행합니다.
 
 * **Parameters**:
-  * hexPublicKey: The hex public key.
+  * hexPublicKey: PublicKey
 * **Returns**: The hash of the public key.
 
 ```javascript
