@@ -42,18 +42,18 @@ Contracts APIs based on SCT Type and Method.
 * `SCT51`: Contract template that implements the management of Vote service.
 * `SCT52`: Contract template that implements the Voting service.
 
-| SCT20                      | SCT30                  | SCT40                  |
-| -------------------------- | ---------------------- | ---------------------- |
-| SCT20\_CREATE              | SCT30\_CREATE          | SCT40\_CREATE          |
-| SCT20\_TRANSFER            | SCT30\_CREATE\_ITEM    | SCT40\_CREATE\_COUPON  |
-| SCT20\_TRANSFER\_FROM      | SCT30\_TRANSFER        | SCT40\_TRANSFER        |
-| SCT20\_APPROVE             | SCT30\_TRANSFER\_FROM  | SCT40\_TRANSFER\_FROM  |
-| SCT20\_DECREASE\_ALLOWANCE |                        |                        |
-| SCT20\_MINT                | SCT30\_APPROVE         | SCT40\_APPROVE         |
-| SCT20\_BURN                | SCT30\_ITEM\_PAUSE     | SCT40\_COUPON\_USE     |
-| SCT20\_PAUSE               | SCT30\_ITEM\_UNPAUSE   | SCT40\_COUPON\_PAUSE   |
-| SCT20\_UNPAUSE             |                        | SCT40\_COUPON\_UNPAUSE |
-| SCT20\_TRANSFER\_OWNER     | SCT30\_TRANSFER\_OWNER | SCT40\_TRANSFER\_OWNER |
+| SCT20                    | SCT30                  | SCT40                  |
+| ------------------------ | ---------------------- | ---------------------- |
+| SCT20\_CREATE            | SCT30\_CREATE          | SCT40\_CREATE          |
+| SCT20\_TRANSFER          | SCT30\_CREATE\_ITEM    | SCT40\_CREATE\_COUPON  |
+| SCT20\_TRANSFER\_FROM    | SCT30\_TRANSFER        | SCT40\_TRANSFER        |
+| SCT20\_APPROVE           | SCT30\_TRANSFER\_FROM  | SCT40\_TRANSFER\_FROM  |
+| SCT20\_DECREASE\_APPROVE |                        |                        |
+| SCT20\_MINT              | SCT30\_APPROVE         | SCT40\_APPROVE         |
+| SCT20\_BURN              | SCT30\_ITEM\_PAUSE     | SCT40\_COUPON\_USE     |
+| SCT20\_PAUSE             | SCT30\_ITEM\_UNPAUSE   | SCT40\_COUPON\_PAUSE   |
+| SCT20\_UNPAUSE           |                        | SCT40\_COUPON\_UNPAUSE |
+| SCT20\_TRANSFER\_OWNER   | SCT30\_TRANSFER\_OWNER | SCT40\_TRANSFER\_OWNER |
 
 | SCT21                        | SCT22                  |
 | ---------------------------- | ---------------------- |
@@ -61,7 +61,7 @@ Contracts APIs based on SCT Type and Method.
 | SCT21\_TRANSFER              | SCT22\_TRANSFER        |
 | SCT21\_TRANSFER\_FROM        |                        |
 | SCT21\_APPROVE               |                        |
-| SCT21\_DECREASE\_ALLOWANCE   |                        |
+| SCT21\_DECREASE\_APPORVE     |                        |
 | SCT21\_MINT                  | SCT22\_MINT            |
 | SCT21\_BURN                  | SCT22\_BURN            |
 | SCT21\_PAUSE                 | SCT22\_PAUSE           |
@@ -278,7 +278,7 @@ sym.sendTransaction({ "from": "0x00020000000000070002", "to": "0xeda14153a4cb151
 }
 ```
 
-#### SCT20\_DECREASE\_ALLOWANCE
+#### SCT20\_DECREASE\_APPROVE
 
 Decrease the amount of tokens that an owner allowed to a spender. `(Authorization: all)`
 
@@ -592,7 +592,7 @@ sym.sendTransaction({ "from": "0x00020000000000060002", "to": "0x32731dbab5dc413
 "0x635fadbec85b1ca7368cb32d48832d0a58935f121900a4d052e032e8e2634b1b"
 ```
 
-#### SCT21\_DECREASE\_ALLOWANCE
+#### SCT21\_DECREASE\_APPORVE
 
 Decrease the amount of tokens that an owner allowed to a spender. `(Authorization: all)`
 
