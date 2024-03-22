@@ -41,16 +41,20 @@ SECRET: d139996edf514e7ba7883930c1db8f7b
 
 ## API Spec
 
-{% swagger method="post" path="/caii/d1/{secret}/account/new" baseUrl="[host]" summary="블록체인 Keystore 생성 API" %}
-{% swagger-description %}
+## 블록체인 Keystore 생성 API
+
+<mark style="color:green;">`POST`</mark> `[host]/caii/d1/{secret}/account/new`
+
 Keystore 생성 및 해당 네트워크에 SymID를 등록합니다.
-{% endswagger-description %}
 
-{% swagger-parameter in="path" name="secret" required="true" %}
-전달받은 고유 Secret 값
-{% endswagger-parameter %}
+#### Path Parameters
 
-{% swagger-response status="200: OK" description="성공" %}
+| Name                                     | Type   | Description      |
+| ---------------------------------------- | ------ | ---------------- |
+| secret<mark style="color:red;">\*</mark> | String | 전달받은 고유 Secret 값 |
+
+{% tabs %}
+{% tab title="200: OK 성공" %}
 ```json
 {
     "message": "NewKeystoreReturn",
@@ -85,27 +89,28 @@ Keystore 생성 및 해당 네트워크에 SymID를 등록합니다.
     }
 }
 ```
-{% endswagger-response %}
+{% endtab %}
 
-{% swagger-response status="401: Unauthorized" description="secret 인증 에러" %}
+{% tab title="401: Unauthorized secret 인증 에러" %}
 
-{% endswagger-response %}
-{% endswagger %}
+{% endtab %}
+{% endtabs %}
 
-{% swagger method="post" path="/caii/d1/{secret}/account/new/{hash}" baseUrl="[host]" summary="블록체인 Keystore 생성 By Public key Hash API" %}
-{% swagger-description %}
+## 블록체인 Keystore 생성 By Public key Hash API
+
+<mark style="color:green;">`POST`</mark> `[host]/caii/d1/{secret}/account/new/{hash}`
+
 Public Key Hash 기반으로 Keystore 생성 및 해당 네트워크에 SymID를 등록합니다.
-{% endswagger-description %}
 
-{% swagger-parameter in="path" name="secret" required="true" type="String" %}
-전달받은 고유 Secret 값
-{% endswagger-parameter %}
+#### Path Parameters
 
-{% swagger-parameter in="path" name="hash" type="String" required="true" %}
-Public Key Hash 
-{% endswagger-parameter %}
+| Name                                     | Type   | Description      |
+| ---------------------------------------- | ------ | ---------------- |
+| secret<mark style="color:red;">\*</mark> | String | 전달받은 고유 Secret 값 |
+| hash<mark style="color:red;">\*</mark>   | String | Public Key Hash  |
 
-{% swagger-response status="200: OK" description="성공" %}
+{% tabs %}
+{% tab title="200: OK 성공" %}
 ```json
 {
     "message": "NewKeystoreReturn",
@@ -140,21 +145,21 @@ Public Key Hash
     }
 }
 ```
-{% endswagger-response %}
+{% endtab %}
 
-{% swagger-response status="400: Bad Request" description="잘못된 hash " %}
+{% tab title="401: Unauthorized secret 인증 에러" %}
+
+{% endtab %}
+
+{% tab title="400: Bad Request 잘못된 hash " %}
 ```json
 {
     "message": "already existed pub_key_hash",
     "result": null
 }
 ```
-{% endswagger-response %}
-
-{% swagger-response status="401: Unauthorized" description="secret 인증 에러" %}
-
-{% endswagger-response %}
-{% endswagger %}
+{% endtab %}
+{% endtabs %}
 
 
 

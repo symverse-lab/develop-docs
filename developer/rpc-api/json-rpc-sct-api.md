@@ -278,7 +278,7 @@ sym.sendTransaction({ "from": "0x00020000000000070002", "to": "0xeda14153a4cb151
 }
 ```
 
-#### SCT20\_DECREASE\_APPROVE
+#### SCT20\_DECREASE\_ALLOWANCE
 
 Decrease the amount of tokens that an owner allowed to a spender. `(Authorization: all)`
 
@@ -592,7 +592,7 @@ sym.sendTransaction({ "from": "0x00020000000000060002", "to": "0x32731dbab5dc413
 "0x635fadbec85b1ca7368cb32d48832d0a58935f121900a4d052e032e8e2634b1b"
 ```
 
-#### SCT21\_DECREASE\_APPROVE
+#### SCT21\_DECREASE\_ALLOWANCE
 
 Decrease the amount of tokens that an owner allowed to a spender. `(Authorization: all)`
 
