@@ -86,41 +86,23 @@ See also [Prepare SCT-Data](https://github.com/symverse-lab/Document/wiki/SCT-Gu
 
 **SCT 계약을 생성하고 사용하기 위해서는 SYM Coin이 필요하다. Gas Fee는 해당 SCT 함수 호출시 필요한 SYM Coin의 수이다.**
 
-_Total Gas = SCT Gas + Transaction Gas_
+_Total Gas =  Transaction Gas + Create Gas + Data Gas + SCT Gas_
 
-| 종류    | 함수                       | 설명           | SCT Gas | Total Gas |
-| ----- | ------------------------ | ------------ | ------: | --------: |
-| SCT20 | SCT20\_CREATE            | SCT20 계약 생성  |  49,000 |    70,000 |
-|       | SCT20\_TRANSFER          | 토큰 송금        |   7,000 |    28,000 |
-|       | SCT20\_MINT              | 토큰 추가 발행     |   7,000 |    28,000 |
-|       | SCT20\_BURN              | 토큰 소각        |   7,000 |    28,000 |
-|       | SCT20\_PAUSE             | 계약 일시정지      |   4,000 |    23,000 |
-|       | SCT20\_UNPAUSE           | 계약 일시정지 해제   |   4,000 |    23,000 |
-|       | SCT20\_GRANT\_OWNERSHIP  | owner 변경     |   4,000 |    25,000 |
-| SCT21 | SCT21\_CREATE            | SCT21 계약 생성  |  50,000 |    71,000 |
-|       | SCT21\_TRANSFER          | 토큰 송금        |   8,000 |    29,000 |
-|       | SCT21\_MINT              | 토큰 추가 발행     |   9,000 |    30,000 |
-|       | SCT21\_BURN              | 토큰 소각        |   9,000 |    30,000 |
-|       | SCT21\_PAUSE             | 계약 일시정지      |   4,000 |    25,000 |
-|       | SCT21\_UNPAUSE           | 계약 일시정지 해제   |   4,000 |    25,000 |
-|       | SCT21\_GRANT\_OWNERSHIP  | owner 변경     |   4,000 |    25,000 |
-|       | SCT21\_TRANSFER\_LOCKED  | 잠금 상태 토큰 송금  |   9,000 |    30,000 |
-|       | SCT21\_GRANT\_UNLOCK     | 토큰 잠금 상태 해제  |   9,000 |    30,000 |
-|       | SCT21\_RECALL\_LOCKED    | 전송한 잠금 토큰 회수 |   9,000 |    30,000 |
-|       | SCT21\_INCREASE\_LOCKED  | 잠금 보유량 추가    |   6,000 |    27,000 |
-|       | SCT21\_DECREASE\_LOCKED  | 잠금 보유량 회수    |   6,000 |    27,000 |
-|       | SCT21\_ACCOUNT\_INACTIVE | 계정 잠금        |   7,000 |    28,000 |
-|       | SCT21\_ACCOUNT\_ACTIVE   | 계정 잠금 해제     |   7,000 |    28,000 |
-| SCT30 | SCT30\_CREATE            | SCT30 계약 생성  |  79,000 |   100,000 |
-|       | SCT30\_CREATE\_ITEM      | SCT30 아이템 생성 |  30,000 |    51,000 |
-|       | SCT30\_TRANSFER          | 아이템 전송       |  14,000 |    35,000 |
-|       | SCT30\_ITEM\_PAUSE       | 아이템 일시정지     |   9,000 |    30,000 |
-|       | SCT30\_ITEM\_UNPAUSE     | 아이템 일시정지 해제  |   9,000 |    30,000 |
-|       | SCT30\_GRANT\_OWNERSHIP  | owner 변경     |   4,000 |    25,000 |
-| SCT40 | SCT40\_CREATE            | SCT40 계약 생성  |  79,000 |   100,000 |
-|       | SCT40\_CREATE\_COUPON    | SCT40 아이템 생성 |  30,000 |    51,000 |
-|       | SCT40\_TRANSFER          | 아이템 전송       |  14,000 |    35,000 |
-|       | SCT40\_COUPON\_USE       | 아이템 사용처리     |   9,000 |    30,000 |
-|       | SCT40\_COUPON\_PAUSE     | 아이템 일시정지     |   9,000 |    30,000 |
-|       | SCT40\_COUPON\_UNPAUSE   | 아이템 일시정지 해제  |   9,000 |    30,000 |
-|       | SCT40\_GRANT\_OWNERSHIP  | owner 변경     |   4,000 |    25,000 |
+* _Transaction Gas_
+
+> if block >= 4,745,000 { Transaction Gas : 49,000 }\
+> else { Transaction Gas : 21,000 }
+
+* _Create Gas_
+
+> if To != nil { Create Gas : 800,000 }&#x20;
+
+* _Data Gas_
+
+> if block >= 4,745,000 { _Data Gas : NonZeroGas(680) \* NonZeroSize + ZeroGas(40) \* ZeroSize_ }
+>
+> else { _Data Gas : NonZeroGas(68) \* NonZeroSize + ZeroGas(4) \* ZeroSize_ }
+
+* Sct Gas
+
+<table><thead><tr><th>종류</th><th width="183">함수</th><th width="200">설명</th><th align="right">SCT Gas</th></tr></thead><tbody><tr><td>SCT20</td><td>SCT20_CREATE</td><td>SCT20 계약 생성</td><td align="right">49,000</td></tr><tr><td></td><td>SCT20_TRANSFER</td><td>토큰 송금</td><td align="right">7,000</td></tr><tr><td></td><td>SCT20_TRANSFER_FROM</td><td>토큰 위임 전송</td><td align="right">9,000</td></tr><tr><td></td><td>SCT20_APPROVE</td><td>토큰 위임</td><td align="right">7,000</td></tr><tr><td></td><td>SCT20_DECREASE_APPROVE</td><td>토큰 위임 취소</td><td align="right">7,000</td></tr><tr><td></td><td>SCT20_MINT</td><td>토큰 추가 발행</td><td align="right">7,000</td></tr><tr><td></td><td>SCT20_BURN</td><td>토큰 소각</td><td align="right">7,000</td></tr><tr><td></td><td>SCT20_PAUSE</td><td>계약 일시정지</td><td align="right">4,000</td></tr><tr><td></td><td>SCT20_UNPAUSE</td><td>계약 일시정지 해제</td><td align="right">4,000</td></tr><tr><td></td><td>SCT20_TRANSFER_OWNER</td><td>owner 변경</td><td align="right">4,000</td></tr><tr><td>SCT21</td><td>SCT21_CREATE</td><td>SCT21 계약 생성</td><td align="right">50,000</td></tr><tr><td></td><td>SCT21_TRANSFER</td><td>토큰 송금</td><td align="right">8,000</td></tr><tr><td></td><td>SCT21_TRANSFER_FROM</td><td>토큰 위임 전송</td><td align="right">10,000</td></tr><tr><td></td><td>SCT21_APPROVE</td><td>토큰 위임</td><td align="right">8,000</td></tr><tr><td></td><td>SCT21_DECREASE_APPROVE</td><td>토큰 위임 취소</td><td align="right">8,000</td></tr><tr><td></td><td>SCT21_MINT</td><td>토큰 추가 발행</td><td align="right">9,000</td></tr><tr><td></td><td>SCT21_BURN</td><td>토큰 소각</td><td align="right">9,000</td></tr><tr><td></td><td>SCT21_PAUSE</td><td>계약 일시정지</td><td align="right">4,000</td></tr><tr><td></td><td>SCT21_UNPAUSE</td><td>계약 일시정지 해제</td><td align="right">4,000</td></tr><tr><td></td><td>SCT21_TRANSFER_OWNER</td><td>owner 변경</td><td align="right">4,000</td></tr><tr><td></td><td>SCT21_LOCK_TRANSFER</td><td>잠금된 토큰  전송</td><td align="right">9,000</td></tr><tr><td></td><td>SCT21_UNLOCK_AMOUNT</td><td>토큰 잠금 상태 해제</td><td align="right">9,000</td></tr><tr><td></td><td>SCT21_RESTORE_LOCK_AMOUNT</td><td>잠금된 토큰 회수</td><td align="right">9,000</td></tr><tr><td></td><td>SCT21_ADD_LOCK_AMOUNT</td><td>잠금 보유량 추가</td><td align="right">6,000</td></tr><tr><td></td><td>SCT21_SUB_LOCK_AMOUNT</td><td>잠금 보유량 회수</td><td align="right">6,000</td></tr><tr><td></td><td>SCT21_ACCOUNT_LOCK</td><td>계정 잠금</td><td align="right">7,000</td></tr><tr><td></td><td>SCT21_ACCOUNT_UNLOCK</td><td>계정 잠금 해제</td><td align="right">7,000</td></tr><tr><td>SCT22</td><td>SCT22_CREATE</td><td>SCT22 계약 생성</td><td align="right">49,000</td></tr><tr><td></td><td>SCT22_TRANSFER</td><td>토큰 송금</td><td align="right">7,000</td></tr><tr><td></td><td>SCT22_MINT</td><td>토큰 추가 발행</td><td align="right">7,000</td></tr><tr><td></td><td>SCT22_BURN</td><td>토큰 소각</td><td align="right">7,000</td></tr><tr><td></td><td>SCT22_PAUSE</td><td>계약 일시정지</td><td align="right">4,000</td></tr><tr><td></td><td>SCT22_UNPAUSE</td><td>계약 일시정지 해제</td><td align="right">4,000</td></tr><tr><td></td><td>SCT22_TRANSFER_OWNER</td><td>owner 변경</td><td align="right">4,000</td></tr><tr><td></td><td>SCT22_SET_AUTHORITY</td><td>권한 설정</td><td align="right">4,000</td></tr><tr><td>SCT30</td><td>SCT30_CREATE</td><td>SCT30 계약 생성</td><td align="right">79,000</td></tr><tr><td></td><td>SCT30_CREATE_ITEM</td><td>SCT30 아이템 생성</td><td align="right">30,000</td></tr><tr><td></td><td>SCT30_TRANSFER</td><td>아이템 전송</td><td align="right">14,000</td></tr><tr><td></td><td>SCT30_TRANSFER_FROM</td><td>토큰 위임 전송</td><td align="right">16,000</td></tr><tr><td></td><td>SCT30_APPROVE</td><td>토큰 위임</td><td align="right">14,000</td></tr><tr><td></td><td>SCT30_ITEM_PAUSE</td><td>아이템 일시정지</td><td align="right">9,000</td></tr><tr><td></td><td>SCT30_ITEM_UNPAUSE</td><td>아이템 일시정지 해제</td><td align="right">9,000</td></tr><tr><td></td><td>SCT30_TRANSFER_OWNER</td><td>owner 변경</td><td align="right">4,000</td></tr><tr><td>SCT40</td><td>SCT40_CREATE</td><td>SCT40 계약 생성</td><td align="right">79,000</td></tr><tr><td></td><td>SCT40_CREATE_COUPON</td><td>SCT40 아이템 생성</td><td align="right">30,000</td></tr><tr><td></td><td>SCT40_TRANSFER</td><td>아이템 전송</td><td align="right">14,000</td></tr><tr><td></td><td>SCT40_TRANSFER_FROM</td><td>토큰 위임 전송</td><td align="right">16,000</td></tr><tr><td></td><td>SCT40_APPROVE</td><td>토큰 위임</td><td align="right">14,000</td></tr><tr><td></td><td>SCT40_COUPON_USE</td><td>아이템 사용처리</td><td align="right">9,000</td></tr><tr><td></td><td>SCT40_COUPON_PAUSE</td><td>아이템 일시정지</td><td align="right">9,000</td></tr><tr><td></td><td>SCT40_COUPON_UNPAUSE</td><td>아이템 일시정지 해제</td><td align="right">9,000</td></tr><tr><td></td><td>SCT40_GRANT_OWNERSHIP</td><td>owner 변경</td><td align="right">4,000</td></tr><tr><td>SCT50</td><td>SCT50_CREATE</td><td>SCT50 설문조사 계약 생성</td><td align="right">49,000</td></tr><tr><td></td><td>SCT50_ADD_POLL_CREATORS</td><td>설문조사 생성 권한 추가</td><td align="right">4,000</td></tr><tr><td></td><td>SCT50_REMOVE_POLL_CREATORS</td><td>설문조사 생성 권한 삭제</td><td align="right">4,000</td></tr><tr><td>SCT51</td><td>SCT51_CREATE_POLL</td><td>SCT51 설문조사 계약 생성</td><td align="right">49,000</td></tr><tr><td></td><td>SCT51_VOTE_IN_POLL</td><td>사용자 설문조사 참여</td><td align="right">4,000</td></tr><tr><td></td><td>SCT51_UNSTAKE_TOKENS</td><td>토큰 예치 해제</td><td align="right">4,000</td></tr><tr><td></td><td>SCT51_EMERGENCY_STOP_POLL</td><td>설문조사 비활성화</td><td align="right">4,000</td></tr><tr><td></td><td>SCT51_FINISH_POLL</td><td>설문조사 만료 처리</td><td align="right">4,000</td></tr><tr><td></td><td>SCT51_WRITE_POLL_RESULTS</td><td>설문조사 결과 쓰기</td><td align="right">4,000</td></tr></tbody></table>
