@@ -137,7 +137,7 @@ curl -X POST --data '{"jsonrpc":"2.0","method":"web3_clientVersion","params":[],
 }
 ```
 
-
+***
 
 **web3\_sha3**
 
@@ -169,7 +169,7 @@ curl -X POST --data '{"jsonrpc":"2.0","method":"web3_sha3","params":["0x68656c6c
 }
 ```
 
-
+***
 
 **net\_version**
 
@@ -200,7 +200,7 @@ curl -X POST --data '{"jsonrpc":"2.0","method":"net_version","params":[],"id":67
 }
 ```
 
-
+***
 
 **net\_listening**
 
@@ -228,7 +228,7 @@ curl -X POST --data '{"jsonrpc":"2.0","method":"net_listening","params":[],"id":
 }
 ```
 
-
+***
 
 **net\_peerCount**
 
@@ -256,7 +256,7 @@ curl -X POST --data '{"jsonrpc":"2.0","method":"net_peerCount","params":[],"id":
 }
 ```
 
-
+***
 
 **sym\_protocolVersion**
 
@@ -284,7 +284,7 @@ curl -X POST --data '{"jsonrpc":"2.0","method":"sym_protocolVersion","params":[]
 }
 ```
 
-
+***
 
 **sym\_syncing**
 
@@ -330,7 +330,7 @@ curl -X POST --data '{"jsonrpc":"2.0","method":"sym_syncing","params":[],"id":1}
 }
 ```
 
-
+***
 
 **sym\_symbase**
 
@@ -358,7 +358,7 @@ curl -X POST --data '{"jsonrpc":"2.0","method":"sym_symbase","params":[],"id":64
 }
 ```
 
-
+***
 
 **sym\_gasPrice**
 
@@ -386,7 +386,7 @@ curl -X POST --data '{"jsonrpc":"2.0","method":"sym_gasPrice","params":[],"id":7
 }
 ```
 
-
+***
 
 **sym\_accounts**
 
@@ -414,7 +414,7 @@ curl -X POST --data '{"jsonrpc":"2.0","method":"sym_accounts","params":[],"id":1
 }
 ```
 
-
+***
 
 **sym\_blockNumber**
 
@@ -442,7 +442,7 @@ curl -X POST --data '{"jsonrpc":"2.0","method":"sym_blockNumber","params":[],"id
 }
 ```
 
-
+***
 
 **sym\_getBalance**
 
@@ -475,7 +475,7 @@ curl -X POST --data '{"jsonrpc":"2.0","method":"sym_getBalance","params":["0x000
 }
 ```
 
-
+***
 
 **sym\_getTransactionCount**
 
@@ -511,7 +511,7 @@ curl -X POST --data '{"jsonrpc":"2.0","method":"sym_getTransactionCount","params
 }
 ```
 
-
+***
 
 **sym\_getBlockTransactionCountByHash**
 
@@ -543,7 +543,7 @@ curl -X POST --data '{"jsonrpc":"2.0","method":"sym_getBlockTransactionCountByHa
 }
 ```
 
-
+***
 
 **sym\_getBlockTransactionCountByNumber**
 
@@ -577,7 +577,7 @@ curl -X POST --data '{"jsonrpc":"2.0","method":"sym_getBlockTransactionCountByNu
 }
 ```
 
-
+***
 
 **sym\_getCode**
 
@@ -613,7 +613,7 @@ curl -X POST --data '{"jsonrpc":"2.0","method":"sym_getCode","params":["0x000000
 }
 ```
 
-
+***
 
 **sym\_sign**
 
@@ -646,7 +646,7 @@ curl -X POST --data '{"jsonrpc":"2.0","method":"sym_sign","params":["0x000000000
 }
 ```
 
-
+***
 
 **sym\_sendTransaction**
 
@@ -696,7 +696,7 @@ curl -X POST --data '{"jsonrpc":"2.0","method":"sym_sendTransaction","params":[{
 }
 ```
 
-
+***
 
 **sym\_sendRawTransaction**
 
@@ -732,7 +732,7 @@ curl -X POST --data '{"jsonrpc":"2.0","method":"sym_sendRawTransaction","params"
 }
 ```
 
-
+***
 
 **sym\_call**
 
@@ -770,7 +770,7 @@ curl -X POST --data '{"jsonrpc":"2.0","method":"sym_call","params":[{see above}]
 }
 ```
 
-
+***
 
 **sym\_estimateGas**
 
@@ -798,7 +798,7 @@ curl -X POST --data '{"jsonrpc":"2.0","method":"sym_estimateGas","params":[{see 
 }
 ```
 
-
+***
 
 **sym\_getBlockByHash**
 
@@ -903,7 +903,7 @@ curl -X POST --data '{"jsonrpc":"2.0","method":"sym_getBlockByHash","params":["0
 }
 ```
 
-
+***
 
 **sym\_getBlockByNumber**
 
@@ -934,7 +934,7 @@ curl -X POST --data '{"jsonrpc":"2.0","method":"sym_getBlockByNumber","params":[
 
 Result see sym\_getBlockByHash
 
-
+***
 
 **sym\_getTransactionByHash**
 
@@ -1004,7 +1004,7 @@ curl -X POST --data '{"jsonrpc":"2.0","method":"sym_getTransactionByHash","param
 }
 ```
 
-
+***
 
 **sym\_getTransactionByBlockHashAndIndex**
 
@@ -1035,7 +1035,7 @@ curl -X POST --data '{"jsonrpc":"2.0","method":"sym_getTransactionByBlockHashAnd
 
 Result see sym\_getTransactionByHash
 
-
+***
 
 **sym\_getTransactionByBlockNumberAndIndex**
 
@@ -1066,7 +1066,7 @@ curl -X POST --data '{"jsonrpc":"2.0","method":"sym_getTransactionByBlockNumberA
 
 Result see sym\_getTransactionByHash
 
-
+***
 
 **sym\_getTransactionReceipt**
 
@@ -1126,7 +1126,57 @@ curl -X POST --data '{"jsonrpc":"2.0","method":"sym_getTransactionReceipt","para
 }
 ```
 
+***
 
+**sym\_getReward**
+
+Returns the reward by reward hash.
+
+**Parameters**
+
+1. `DATA`, 32 Bytes - hash of a reward
+
+```javascript
+params: ['0x77c684a89b85adc04fdf1908347e11705b45d2ad1b4e6237f65e6332b9a08ac4']
+```
+
+**Returns**
+
+`Object` - A reward object, or `null` when no reward was found:
+
+* `blockHash`: `DATA`, 32 Bytes - hash of the block where this reward was in.
+* `blockNumber`: `QUANTITY` - block number where this reward was in.
+* `extra`: `DATA` 10 Bytes - reward delegation account for that warrant node.
+* `rewardHash` : `DATA`, 32 Bytes - hash of the reward.
+* `rewardIndex`: `QUANTITY` - integer of the reward's index position in the block.
+* `symId`: `DATA`, 10 Bytes - address of the warrant node.
+* `type`: `QUANTITY`, - device type. (wallet : 0, work : 1, warrant :2, ca : 3, oraclizer : 4)
+* `value`: `QUANTITY` - reward amount in Hug.
+
+**Example**
+
+```javascript
+// Request
+curl -X POST --data '{"jsonrpc":"2.0","method":"sym_getReward","params":["0x77c684a89b85adc04fdf1908347e11705b45d2ad1b4e6237f65e6332b9a08ac4"],"id":100}'
+
+// Result
+{
+    "jsonrpc": "2.0",
+    "id": 100,
+    "result": {
+        "blockHash": "0x020d2d8e4a59dcb53a3187d615960e6b59e246328fea5880ead7032b442171d6",
+        "blockNumber": 43895200,
+        "extra": "0x0002aea7a09991500002",
+        "hash": "0x6fbebf239ffba49e3caf4086485ad7ac61dbbcb80838c278fb8ba2551966ff7c",
+        "rewardIndex": 0,
+        "symId": "0x0002282119120b040002",
+        "type": 2,
+        "value": 514285714285714285714
+    }
+}
+```
+
+***
 
 **sym\_getDeposit**
 
@@ -1162,7 +1212,7 @@ curl -X POST --data '{"jsonrpc":"2.0","method":"sym_getDeposit","params":["0x000
 }
 ```
 
-
+***
 
 **sym\_setDeposit**
 
@@ -1193,7 +1243,7 @@ curl -X POST --data '{"jsonrpc":"2.0","method":"sym_setDeposit","params":["0x000
 }
 ```
 
-
+***
 
 **sym\_restoreDeposit**
 
@@ -1223,7 +1273,7 @@ curl -X POST --data '{"jsonrpc":"2.0","method":"sym_restoreDeposit","params":["0
 }
 ```
 
-
+***
 
 **warrant\_blockNumber**
 
@@ -1251,7 +1301,7 @@ curl -X POST -H "Content-Type: application/json; charset=utf-8" --data '{ "jsonr
 }
 ```
 
-
+***
 
 **warrant\_getWarrantsByBlockHash**
 
@@ -1329,7 +1379,7 @@ curl -X POST -H "Content-Type: application/json; charset=utf-8" --data '{ "jsonr
 }
 ```
 
-
+***
 
 **warrant\_getWarrantsByBlockNumber**
 
@@ -1401,7 +1451,7 @@ curl -X POST -H "Content-Type: application/json; charset=utf-8" --data '{ "jsonr
 }
 ```
 
-
+***
 
 **warrant\_getBlockByNumber**
 
@@ -1426,7 +1476,39 @@ curl -X POST -H "Content-Type: application/json; charset=utf-8" --data '{"jsonrp
 see warrant_getblockByHash
 ```
 
+***
 
+**warrant\_GetRewardAddr**
+
+Returns information about the reward delegation account for that warrant node based on the block hash or number and the warrant node account.
+
+**Parameters**
+
+1. `symId`:`DATA`, 10 Bytes - the warrant node's identity.
+2. `DATA`, 32 Bytes - Hash of a warrant block or `QUANTITY|TAG` - Integer of a block number, or the string `"earliest"`,`"pending"` or `"latest"`
+
+**Returns**
+
+`symId:DATA, 10 Bytes` - Reward delegation account for that warrant node.
+
+**Example**
+
+```javascript
+//Request
+curl -X POST -H "Content-Type: application/json; charset=utf-8" --data '{ "jsonrpc":"2.0", "method":"warrant_getRewardAddr", "params":["0x0002fdf5eee7e0d80002","latest"], "id":100 }' <http://127.0.0.1:8545>
+// or
+// curl -X POST -H "Content-Type: application/json; charset=utf-8" --data '{ "jsonrpc":"2.0", "method":"warrant_getRewardAddr", "params":["0x0002fdf5eee7e0d80002",762], "id":100 }' <http://127.0.0.1:8545>
+// or
+// curl -X POST -H "Content-Type: application/json; charset=utf-8" --data '{ "jsonrpc":"2.0", "method":"warrant_getRewardAddr", "params":["0x0002fdf5eee7e0d80002","0xeafdd6c6d79a2e3cb41064bcbee9ee8416c4bf97987d859eaab9ef34e9223073"], "id":100 }' <http://127.0.0.1:8545>
+//Result
+{
+    "jsonrpc": "2.0",
+    "id": 100,
+    "result": "0x0002aea7a09991500002"
+}
+```
+
+***
 
 **citizen\_sendCitizen**
 
@@ -1478,7 +1560,7 @@ curl -X POST -H "Content-Type: application/json; charset=utf-8" --data '{"jsonrp
 {"jsonrpc":"2.0","id":100,"result":"0x4841852ea5d07be83b6ffc087619664b4609405c286c7fe325492c16ca53f2c5"}
 ```
 
-
+***
 
 **citizen\_sendRawCitizen**
 
@@ -1502,7 +1584,7 @@ curl -X POST -H "Content-Type: application/json; charset=utf-8" --data '{"jsonrp
 {"jsonrpc":"2.0","id":100,"result":"0x09e67b2f1bd21f6043368f97ebff4f4a2b238111c5a5767b75abde08845bda6e"
 ```
 
-
+***
 
 **citizen\_getCitizenByHash**
 
@@ -1570,7 +1652,7 @@ curl -X POST -H "Content-Type: application/json; charset=utf-8" --data '{"jsonrp
 }
 ```
 
-
+***
 
 **citizen\_getRawCitizenByHash**
 
@@ -1598,7 +1680,7 @@ curl -X POST -H "Content-Type: application/json; charset=utf-8" --data '{"jsonrp
 }
 ```
 
-
+***
 
 **citizen\_getCitizenBySymID**
 
@@ -1649,7 +1731,7 @@ curl -X POST -H "Content-Type: application/json; charset=utf-8" --data '{"jsonrp
 }
 ```
 
-
+***
 
 **citizen\_getRawCitizenBySymID**
 
@@ -1678,7 +1760,7 @@ curl -X POST -H "Content-Type: application/json; charset=utf-8" --data '{"jsonrp
 }
 ```
 
-
+***
 
 **citizen\_getCitizensByBlockNumber**
 
@@ -1769,7 +1851,7 @@ curl -X POST -H "Content-Type: application/json; charset=utf-8" --data '{"jsonrp
 }
 ```
 
-
+***
 
 **citizen\_getCitizenCount**
 
@@ -1797,7 +1879,7 @@ curl -X POST --data '{"jsonrpc":"2.0","method":"citizen_getCitizenCount","params
 }
 ```
 
-
+***
 
 **citizen\_pendingCitizens**
 
@@ -1909,7 +1991,7 @@ curl -X POST -H "Content-Type: application/json; charset=utf-8" --data '{"jsonrp
 }
 ```
 
-
+***
 
 **citizen\_blockNumber**
 
@@ -1934,7 +2016,7 @@ curl -X POST -H "Content-Type: application/json; charset=utf-8" --data '{"jsonrp
 {"jsonrpc":"2.0","id":100,"result":"0x97" //151}
 ```
 
-
+***
 
 **citizen\_getBlockByHash**
 
@@ -2002,7 +2084,7 @@ curl -X POST -H "Content-Type: application/json; charset=utf-8" --data '{"jsonrp
 }
 ```
 
-
+***
 
 **citizen\_getBlockByNumber**
 
@@ -2027,7 +2109,7 @@ curl -X POST -H "Content-Type: application/json; charset=utf-8" --data '{"jsonrp
 see citizen_getCitizenBlockByHash
 ```
 
-
+***
 
 **citizen\_getBlockCitizenCountByHash**
 
@@ -2061,7 +2143,7 @@ curl -X POST --data '{"jsonrpc":"2.0","method":"citizen_getBlockCitizenCountByHa
 }
 ```
 
-
+***
 
 **citizen\_getBlockCitizenCountByNumber**
 
@@ -2095,7 +2177,7 @@ curl -X POST --data '{"jsonrpc":"2.0","method":"citizen_getBlockCitizenCountByNu
 }
 ```
 
-
+***
 
 **oracle\_sendOracle**
 
@@ -2135,7 +2217,7 @@ curl -X POST -H "Content-Type: application/json; charset=utf-8" --data '{"jsonrp
 }
 ```
 
-
+***
 
 **oracle\_sendRawOracle**
 
@@ -2163,7 +2245,7 @@ curl -X POST -H "Content-Type: application/json; charset=utf-8" --data '{"jsonrp
 }
 ```
 
-
+***
 
 **oracle\_sendOracleJSON**
 
@@ -2194,7 +2276,7 @@ curl -X POST --data '{"jsonrpc":"2.0","method":"oracle_sendOracleJSON","params":
 }
 ```
 
-
+***
 
 **oracle\_getOracleByHash**
 
@@ -2235,7 +2317,7 @@ curl -X POST -H "Content-Type: application/json; charset=utf-8" --data '{"jsonrp
 }
 ```
 
-
+***
 
 **oracle\_getRawOracleByHash**
 
@@ -2263,7 +2345,7 @@ curl -X POST -H "Content-Type: application/json; charset=utf-8" --data '{"jsonrp
 }
 ```
 
-
+***
 
 **oracle\_getOracleCount**
 
@@ -2292,7 +2374,7 @@ curl -X POST --data '{"jsonrpc":"2.0","method":"oracle_getOracleCount","params":
 }
 ```
 
-
+***
 
 **oracle\_pendingOracles**
 
@@ -2362,7 +2444,7 @@ curl -X POST -H "Content-Type: application/json; charset=utf-8" --data '{"jsonrp
 }
 ```
 
-
+***
 
 **oracle\_blockNumber**
 
@@ -2387,7 +2469,7 @@ curl -X POST -H "Content-Type: application/json; charset=utf-8" --data '{"jsonrp
 {"jsonrpc":"2.0","id":100,"result":"0x97" //151}
 ```
 
-
+***
 
 **oracle\_getBlockByHash**
 
@@ -2449,7 +2531,7 @@ curl -X POST -H "Content-Type: application/json; charset=utf-8" --data '{"jsonrp
 }
 ```
 
-
+***
 
 **oracle\_getBlockByNumber**
 
@@ -2474,7 +2556,7 @@ curl -X POST -H "Content-Type: application/json; charset=utf-8" --data '{"jsonrp
 see oracle_getBlockByHash
 ```
 
-
+***
 
 **sct\_getContract**
 
@@ -2521,7 +2603,7 @@ curl -X POST -H "Content-Type: application/json; charset=utf-8" --data '{"jsonrp
 }
 ```
 
-
+***
 
 **sct\_getContractItem**
 
@@ -2566,7 +2648,7 @@ curl -X POST -H "Content-Type: application/json; charset=utf-8" --data '{"jsonrp
 }
 ```
 
-
+***
 
 **sct\_getContractAccount**
 
@@ -2598,7 +2680,7 @@ curl -X POST -H "Content-Type: application/json; charset=utf-8" --data '{"jsonrp
 }
 ```
 
-
+***
 
 **sct\_getAllowance**
 
@@ -2631,7 +2713,7 @@ curl -X POST -H "Content-Type: application/json; charset=utf-8" --data '{"jsonrp
 }
 ```
 
-
+***
 
 **sct\_getContractItemsByCategory**
 
