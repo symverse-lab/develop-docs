@@ -10,7 +10,7 @@
 
 **Security :** You can backup multiple mainnet KeyStores into a single file and restore the wallet using the KeyStore stored externally.
 
-**OS independent** : 안드로이드, iOS, Mac OS, Window 등에서 작동하여 사용자가 다양한 단말기에서 동일한 지갑을 사용할 수 있습니다.
+**OS independent** : Operates on Android, iOS, Mac OS, and Windows, allowing users to use the same wallet across various devices.
 
 **Multiple account support :** Allows the use of multiple accounts with different IDs in a single wallet.
 
