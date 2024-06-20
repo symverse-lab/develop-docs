@@ -1,12 +1,12 @@
 # 💚 Symverse 소개
 
-## 심버스는 자기주권형 분산ID를 기반으로 작동하는 1초 대의 블록확정성을 가진 멀티 블록체인 플랫폼 생태계입니다.
+## Symverse is a multi-blockchain platform ecosystem that operates based on self-sovereign decentralized IDs and achieves block finality within seconds.
 
-독자적인 ID체계를 통하여 심버스플랫폼 기반의 독립적인 블록체인플랫폼들은 상호 연동하는 협력적인 생태계로서 블록체인 서비스를 확장시킬 수 있습니다.
+Through its unique ID system, the independent blockchain platforms based on the Symverse platform can interoperate, creating a collaborative ecosystem that expands blockchain services.
 
 
 
-## 심버스 시작하기&#x20;
+## EXplore Symverse&#x20;
 
 {% content-ref url="developer/undefined/undefined/" %}
 [undefined](developer/undefined/undefined/)
