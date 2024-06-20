@@ -1,6 +1,7 @@
 # Wallet Usage
 
-## **SALT - Universal Wallet**
+## SALT - Universal Wallet
+
 
 <figure><img src="../../../.gitbook/assets/img-device (1).png" alt=""><figcaption></figcaption></figure>
 
