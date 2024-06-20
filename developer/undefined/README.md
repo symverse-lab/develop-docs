@@ -1,6 +1,6 @@
 ---
-description: 지갑 및 노드 실행방법에 대해 소개하는 페이지 입니다.
+description: Wallet and Node Execution Guide.
 ---
 
-# 시작하기
+# Start
 
