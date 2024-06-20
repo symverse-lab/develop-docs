@@ -1,5 +1,4 @@
-# 💚 Symverse Introduction
-
+# 💚 Symverse 
 ## Symverse is a multi-blockchain platform ecosystem that operates based on self-sovereign decentralized IDs and achieves block finality within seconds.
 
 Through its unique ID system, the independent blockchain platforms based on the Symverse platform can interoperate, creating a collaborative ecosystem that expands blockchain services.
